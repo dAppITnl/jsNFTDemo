@@ -1,0 +1,158 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFTdemo - Factory</title>
+    <script type="text/javascript" src="assets/js/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/moment.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-datetimepicker.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/mystyle.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/nfts.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/frontend.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/factory.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-datetimepicker.css">
+</head>
+
+<body id="body">
+    <div id="menu"></div>
+
+    <div class="animation-wrapper">
+        <div class="particle particle-1"></div>
+    </div>
+    <div class="cursor"></div>
+    <div class="shadow-cursor"></div>
+
+    <div class="container p-5" style="margin-top: 12vh;margin-bottom: 10vh;">
+        <div align="center">
+            <h1 class="c-white">Add a NFT</h1>
+            <p class="c-white">Add your NFT with attributes</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 nftBox m-2 light-b-shadow">
+                <div id="inputImage"></div>
+            </div>
+            <div class="col-lg-7 nfttabs m-2 light-b-shadow">
+
+                <!-- Tabs navs -->
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a href="#tabImage" class="nav-link active" data-toggle="tab">Image</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#tabMetadata" class="nav-link" data-toggle="tab">Metadata</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#tabChain" class="nav-link" data-toggle="tab">Chain</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#tabResult" class="nav-link" data-toggle="tab">Result</a>
+                    </li>
+                </ul>
+                                    
+                <!-- Tabs content -->
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="tabImage">
+                        <table border="0">
+                            <tr><th><b>Image</b></th> <td><input type="file" class="form-control-file" id="inputImagefile"></td></tr>
+                        </table>
+                        <p><hr></p>
+                        <button type="button" id="saveImageToIPFS" class="btn btn-Success">Save image to IPFS</button>
+                        <span id="saveImageToIPFSResult"></span>
+                    </div>
+
+                    <div class="tab-pane fade" id="tabMetadata">
+                        <table border="0">
+                            <tr><td><b>Image Hash</b></td>  <td><input type="text" maxlength="64" size="32" class="form-control-text" id="inputImageIPFSHash"></td>
+                            <tr><td><b>Name</b></td>        <td><input type="text" maxlength="40" size="32" class="form-control-text" id="inputName"></td></tr>
+                            <tr><td><b>Size</b></td>        <td><input type="text" maxlength="20" size="20" class="form-control-text" id="inputSize"></td></tr>
+                            <tr><td><b>Style code</b></td>  <td><input type="text" maxlength="20" size="20" class="form-control-text" id="inputStylecode"></td></tr>
+                            <tr><td><b>Brand</b></td>       <td><input type="text" maxlength="20" size="20" class="form-control-text" id="inputBrand"></td></tr>
+                            <tr><td><b>Model</b></td>       <td><input type="text" maxlength="20" size="20" class="form-control-text" id="inputModel"></td></tr>
+                            <tr><td><b>Release date</b></td><td><input type="text" maxlength="20" size="20" class="form-control-text" id="inputReleasedate"></td></tr>
+                            <tr><td valign="top"><b>Description</b></td><td><textarea rows="4" cols="32" class="form-control-textarea" id="inputDescription"></textarea></td></tr>
+                        </table>
+                        <p><hr></p>
+                        <button type="button" id="getImageFromIPFS" class="btn btn-Success">Get image from IPFS</button>
+                        <button type="button" id="saveMetadataToIPFS" class="btn btn-Success">Save metadata to IPFS</button>
+                        <span id="saveMetadataToIPFSResult"></span>
+                    </div>
+
+                    <div class="tab-pane fade" id="tabChain">
+                        <table border="0">
+                            <tr><td><b>Metadata Hash</b></td>    <td><input type="text" maxlength="64" size="32" class="form-control-text" id="inputMetadataIPFSHash"></td>
+                            <tr><td><b>Init price (ETH)</b></td> <td><input type="number" size="10" min="0.0000" max="9999.9999" step="0.0001" class="form-control-number" id="inputInitPrice">
+                                <span id="initPriceEuro"></span>
+                            </td></tr>
+                        </table>
+                        <p><hr></p>
+                        <button type="button" id="getMetadataFromIPFS" class="btn btn-Success">Get metadata from IPFS</button>
+                        <button type="button" id="saveMetadataHashToChain" class="btn btn-Success">Save metadataHash to Chain</button>
+                        <span id="saveMetadataHashToChainResult"></span>
+                    </div>
+
+                    <div class="tab-pane fade" id="tabResult">
+                        <table border="0">
+                            <tr><th>Image hash</th>    <td><span id="resultImageHash"></span></td></tr>
+                            <tr><th>Metadata hash</th> <td><span id="resultMetadataHash"></span></td></tr>
+                            <tr><th>Chain hash</th>    <td><span id="resultChainHash"></span></td></tr>
+                            <tr><th>NFT</th>           <td><span id="resultNft"></span></td></tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- Tabs content -->
+
+            </div>
+
+        </div>
+        <div id="message" align="center"></div>
+        <br>
+
+    </div>
+
+    <footer align="left">
+        <div id="footer">
+        </div>
+    </footer>
+</body>
+
+<script>
+$(document).ready(function() {
+    //if (window.jQuery().datetimepicker) {
+        console.log('datetimepicker..')
+        $('#inputReleasedate').datetimepicker({
+            // Formats -- follow MomentJS docs: https://momentjs.com/docs/#/displaying/format/
+            format: 'DD-MM-YYYY HH:mm',
+            // Icons -- as Bootstrap 4 is not using Glyphicons anymore
+            icons: {
+                time: 'fa fa-clock-o',
+                date: 'fa fa-calendar',
+                up: 'fa fa-chevron-up',
+                down: 'fa fa-chevron-down',
+                previous: 'fa fa-chevron-left',
+                next: 'fa fa-chevron-right',
+                today: 'fa fa-check',
+                clear: 'fa fa-trash',
+                close: 'fa fa-times'
+            }
+        })
+    //}
+})
+</script>
+
+<script type="text/javascript" src="assets/js/helpers.js"></script>
+<script type="text/javascript" src="assets/js/components.js"></script>
+
+<script type="text/javascript">const action='factory';</script>
+
+<script type="text/javascript" src="https://unpkg.com/moralis/dist/moralis.js"></script>
+<script type="text/javascript" src="assets/js/web3.min.js"></script>
+<script type="text/javascript" src="./network.js"></script>
+<script type="text/javascript" src="./abi.js"></script>
+<script type="text/javascript" src="./moralis-config.js"></script>
+<script type="text/javascript" src="./factory.js"></script>
+
+</html>

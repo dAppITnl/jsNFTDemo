@@ -1,0 +1,127 @@
+digraph G {
+  graph [ ratio = "auto", page = "100", compound =true, bgcolor = "#2e3e56" ];
+  node [ style = "filled", fillcolor = "#edad56", color = "#edad56", penwidth =3 ];
+  edge [ color = "#fcfcfc", penwidth =2, fontname = "helvetica Neue Ultra Light" ];
+subgraph "clusterNftcontract" {
+  graph [ label = "Nftcontract", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "Nftcontract.<Constructor>" [ label = "<Constructor>", color = "#FF9797", fillcolor = "#FF9797" ];
+  "Nftcontract.supportsInterface" [ label = "supportsInterface", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "Nftcontract.createNft" [ label = "createNft", color = "#FF9797", fillcolor = "#FF9797" ];
+  "Nftcontract._createNft" [ label = "_createNft" ];
+  "Nftcontract.getNft" [ label = "getNft", color = "#FF9797", fillcolor = "#FF9797" ];
+  "Nftcontract.balanceOf" [ label = "balanceOf" ];
+  "Nftcontract.totalSupply" [ label = "totalSupply" ];
+  "Nftcontract.name" [ label = "name", color = "#FF9797", fillcolor = "#FF9797" ];
+  "Nftcontract.symbol" [ label = "symbol", color = "#FF9797", fillcolor = "#FF9797" ];
+  "Nftcontract.ownerOf" [ label = "ownerOf" ];
+  "Nftcontract.transfer" [ label = "transfer", color = "#FF9797", fillcolor = "#FF9797" ];
+  "Nftcontract._transfer" [ label = "_transfer" ];
+  "Nftcontract._owns" [ label = "_owns" ];
+  "Nftcontract.approve" [ label = "approve", color = "#FF9797", fillcolor = "#FF9797" ];
+  "Nftcontract.setApprovalForAll" [ label = "setApprovalForAll", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "Nftcontract.getApproved" [ label = "getApproved", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "Nftcontract._approve" [ label = "_approve" ];
+  "Nftcontract.safeTransferFrom" [ label = "safeTransferFrom" ];
+  "Nftcontract._safeTransfer" [ label = "_safeTransfer" ];
+  "Nftcontract.transferFrom" [ label = "transferFrom", color = "#FF9797", fillcolor = "#FF9797" ];
+  "Nftcontract._approvedFor" [ label = "_approvedFor" ];
+  "Nftcontract._checkERC721Support" [ label = "_checkERC721Support" ];
+  "Nftcontract._isContract" [ label = "_isContract" ];
+  "Nftcontract._isApprovedOrOwner" [ label = "_isApprovedOrOwner" ];
+  "Nftcontract._deleteApproval" [ label = "_deleteApproval", color = "#f2c383", fillcolor = "#f2c383" ];
+  "Nftcontract.tokensOfOwner" [ label = "tokensOfOwner", color = "#FF9797", fillcolor = "#FF9797" ];
+  "Nftcontract.getOffer" [ label = "getOffer", color = "#FF9797", fillcolor = "#FF9797" ];
+  "Nftcontract.getAllTokenOnSale" [ label = "getAllTokenOnSale", color = "#FF9797", fillcolor = "#FF9797" ];
+  "Nftcontract.setOffer" [ label = "setOffer" ];
+  "Nftcontract.removeOffer" [ label = "removeOffer", color = "#FF9797", fillcolor = "#FF9797" ];
+  "Nftcontract.buyNft" [ label = "buyNft", color = "brown", fillcolor = "#FF9797" ];
+  "Nftcontract._ownsNft" [ label = "_ownsNft" ];
+  "Nftcontract.IERC721Receiver" [ label = "IERC721Receiver" ];
+}
+
+  "Nftcontract.<Constructor>";
+  "Nftcontract._createNft";
+  "Nftcontract.createNft";
+  "Nftcontract.setOffer";
+  "Nftcontract._transfer";
+  "Nftcontract.transfer";
+  "Nftcontract._owns";
+  "Nftcontract.approve";
+  "Nftcontract._approve";
+  "Nftcontract.getApproved";
+  "Nftcontract.totalSupply";
+  "Nftcontract.safeTransferFrom";
+  "Nftcontract._isApprovedOrOwner";
+  "Nftcontract._safeTransfer";
+  "Nftcontract._checkERC721Support";
+  "Nftcontract.transferFrom";
+  "Nftcontract._isContract";
+  "Nftcontract.IERC721Receiver";
+  "Nftcontract._approvedFor";
+  "Nftcontract._deleteApproval";
+  "Nftcontract.tokensOfOwner";
+  "Nftcontract.balanceOf";
+  "Nftcontract._ownsNft";
+  "Nftcontract.removeOffer";
+  "Nftcontract.buyNft";
+  "Nftcontract.ownerOf";
+  "Nftcontract.<Constructor>" -> "Nftcontract._createNft" [ color = "#1bc6a6" ];
+  "Nftcontract.createNft" -> "Nftcontract._createNft" [ color = "#1bc6a6" ];
+  "Nftcontract.createNft" -> "Nftcontract.setOffer" [ color = "#1bc6a6" ];
+  "Nftcontract._createNft" -> "Nftcontract._transfer" [ color = "#1bc6a6" ];
+  "Nftcontract.transfer" -> "Nftcontract._owns" [ color = "#1bc6a6" ];
+  "Nftcontract.transfer" -> "Nftcontract._transfer" [ color = "#1bc6a6" ];
+  "Nftcontract.approve" -> "Nftcontract._owns" [ color = "#1bc6a6" ];
+  "Nftcontract.approve" -> "Nftcontract._owns" [ color = "#1bc6a6" ];
+  "Nftcontract.approve" -> "Nftcontract._approve" [ color = "#1bc6a6" ];
+  "Nftcontract.getApproved" -> "Nftcontract.totalSupply" [ color = "#1bc6a6" ];
+  "Nftcontract.safeTransferFrom" -> "Nftcontract.safeTransferFrom" [ color = "#1bc6a6" ];
+  "Nftcontract.safeTransferFrom" -> "Nftcontract._isApprovedOrOwner" [ color = "#1bc6a6" ];
+  "Nftcontract.safeTransferFrom" -> "Nftcontract._safeTransfer" [ color = "#1bc6a6" ];
+  "Nftcontract._safeTransfer" -> "Nftcontract._transfer" [ color = "#1bc6a6" ];
+  "Nftcontract._safeTransfer" -> "Nftcontract._checkERC721Support" [ color = "#1bc6a6" ];
+  "Nftcontract.transferFrom" -> "Nftcontract._isApprovedOrOwner" [ color = "#1bc6a6" ];
+  "Nftcontract.transferFrom" -> "Nftcontract._transfer" [ color = "#1bc6a6" ];
+  "Nftcontract._checkERC721Support" -> "Nftcontract._isContract" [ color = "#1bc6a6" ];
+  "Nftcontract._checkERC721Support" -> "Nftcontract.IERC721Receiver" [ color = "#1bc6a6" ];
+  "Nftcontract._isApprovedOrOwner" -> "Nftcontract._owns" [ color = "#1bc6a6" ];
+  "Nftcontract._isApprovedOrOwner" -> "Nftcontract.totalSupply" [ color = "#1bc6a6" ];
+  "Nftcontract._isApprovedOrOwner" -> "Nftcontract._approvedFor" [ color = "#1bc6a6" ];
+  "Nftcontract._deleteApproval" -> "Nftcontract._owns" [ color = "#1bc6a6" ];
+  "Nftcontract.tokensOfOwner" -> "Nftcontract.balanceOf" [ color = "#1bc6a6" ];
+  "Nftcontract.tokensOfOwner" -> "Nftcontract.totalSupply" [ color = "#1bc6a6" ];
+  "Nftcontract.setOffer" -> "Nftcontract._ownsNft" [ color = "#1bc6a6" ];
+  "Nftcontract.setOffer" -> "Nftcontract.approve" [ color = "#1bc6a6" ];
+  "Nftcontract.removeOffer" -> "Nftcontract._owns" [ color = "#1bc6a6" ];
+  "Nftcontract.removeOffer" -> "Nftcontract._deleteApproval" [ color = "#1bc6a6" ];
+  "Nftcontract.buyNft" -> "Nftcontract._approve" [ color = "#1bc6a6" ];
+  "Nftcontract.buyNft" -> "Nftcontract.transferFrom" [ color = "#1bc6a6" ];
+  "Nftcontract._ownsNft" -> "Nftcontract.ownerOf" [ color = "#1bc6a6" ];
+
+
+rankdir=LR
+node [shape=plaintext]
+subgraph cluster_01 { 
+label = "Legend";
+key [label=<<table border="0" cellpadding="2" cellspacing="0" cellborder="0">
+  <tr><td align="right" port="i1">Internal Call</td></tr>
+  <tr><td align="right" port="i2">External Call</td></tr>
+  <tr><td align="right" port="i3">Defined Contract</td></tr>
+  <tr><td align="right" port="i4">Undefined Contract</td></tr>
+  </table>>]
+key2 [label=<<table border="0" cellpadding="2" cellspacing="0" cellborder="0">
+  <tr><td port="i1">&nbsp;&nbsp;&nbsp;</td></tr>
+  <tr><td port="i2">&nbsp;&nbsp;&nbsp;</td></tr>
+  <tr><td port="i3" bgcolor="#445773">&nbsp;&nbsp;&nbsp;</td></tr>
+  <tr><td port="i4">
+    <table border="1" cellborder="0" cellspacing="0" cellpadding="7" color="#e8726d">
+      <tr>
+       <td></td>
+      </tr>
+     </table>
+  </td></tr>
+  </table>>]
+key:i1:e -> key2:i1:w [color="#1bc6a6"]
+key:i2:e -> key2:i2:w [color="white"]
+}
+}

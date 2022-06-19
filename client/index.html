@@ -1,0 +1,103 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>javascript NFT Demo</title>
+
+    <script type="text/javascript" src="assets/js/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css" />
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/colors.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/frontend.css" />
+  </head>
+
+  <body cz-shortcut-listen="true">
+    <div id="menu"></div>
+
+    <div class="animation-wrapper">
+      <div class="particle particle-1"></div>
+      <div class="particle particle-2"></div>
+      <div class="particle particle-3"></div>
+    </div>
+
+    <div class="frontend" align="center">
+      <img src="assets/images/jsNFTbar.png" class="nftGroup" />
+      <div class="container">
+        <div class="banner">
+          <h3 class="c-white m-2">Add and Collect collectible items!</h3>
+          <button class="btn white-btn mt-2 c-red">Add your item</button>
+        </div>
+      </div>
+      <div></div>
+    </div>
+
+    <div class="container middleBox" align="center">
+      <h1 class="m-4">Features</h1>
+      <div class="row">
+        <div class="col-lg-4 pointer">
+          <div class="featureBox">
+            <div class="featureBoxImg">
+              <img src="assets/images/coin.png" style="margin: 25px;" />
+            </div>
+
+            <h4>Buy & sell Items</h4>
+            <p>
+              Buy or sell items in a market place using crypto-currency! you
+              can find all kind or weird and special items.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 pointer">
+          <div class="featureBox">
+            <div class="featureBoxImg">
+              <img src="assets/images/reward.png" style="margin: 25px;" />
+            </div>
+            <h4>Create collections & earn rewards</h4>
+            <p>
+              Collect all types of items with unique Sattributes! Earn special
+              items, sell them or <b>Love</b> them.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 pointer">
+          <div class="featureBox">
+            <div class="featureBoxImg">
+              <img src="assets/images/pop.png" style="margin: 25px;" />
+            </div>
+            <h4>Add adorable items</h4>
+            <p>
+              Add your item with their attributes and image.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="well">
+        <p>
+          For this demo:
+          <ul>
+            <li>Install <a href="https://metamask.io/" target="_blank">MetaMask</a> browser plugin as wallet</li>
+            <li>In MetaMask select a local (install <a href="https://trufflesuite.com/ganache/" target="_blank">Ganache</a>) or Rinkeby testnet</li>
+            <li>Optional <a href="https://faucet.rinkeby.io/" target="_blank">fund (faucet)</a> your Rinkeby account</li>
+            <li>Select <a href="/factory.html">Create NFT</a> to add a item (Image, Metadata, Chain)</li>
+            <li>At <a href="/myNfts.html">My NFTs</a> select one and set Offer</li>
+            <li>At <a href="/Catalog.html">Catalog</a> 'Buy me' to become the owner of a item</li>
+          </ul>
+        </p>
+        <p>Note: When logged-in, <b>except homepage</b>, always the footer must show a valid 'my address' as your MetaMask wallet address, Contract address and Network to work properly.</p>
+      </div>
+    </div>
+
+    <footer align="left">
+      <div id="divFooter">
+      </div>
+    </footer>
+  </body>
+  
+  <script src="assets/js/components.js"></script>
+</html>
