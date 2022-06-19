@@ -86,10 +86,12 @@ Surf to https://remix.ethereum.org:
   - click `Deploy`-button and wait till deployment is finished at the (test)network, accpeting the Metamask actions
   - under `Deployed contracts` copy the address and paste it into the `network.js` file for the here used network, see above.
 
-run the app as above, with Metamask set to the (test)network for which it is deployed
+run the app as above, with Metamask set to the (test)network for which it is deployed from `client` map
 ex.: python3 -m http.server 3000
 browser: http://localhost:3000
 
-Test Metadata hash-es:
-QmWf8GthBR1mfswjoHrN3hTZegcAwWYuL7pCAGRkJcnn56
+Install (only) client map contents at a webroot to run from a webserver.
 
+## Test Metadata hash-es:
+- QmWf8GthBR1mfswjoHrN3hTZegcAwWYuL7pCAGRkJcnn56 = emoji smiley twitter
+- QmcaCDUMFu33G8WVn7sZVKegPuYzKhsWxH7Ktkw7iSQFXV = emoji ogre emojidex
