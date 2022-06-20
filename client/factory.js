@@ -24,9 +24,10 @@ async function connectMetaMask() {
   
     await Moralis.User.logOut().then(() => {
       console.log('User disconnected from MetaMask!')
-      connectBtn.text('connect MetaMask') // .on('click', connectMetaMask)
+      connectBtn.text('connect MetaMask')
       web3 = null
       userAccount = 'unknown'
+      $('#userAccount').text(userAccount)
     })
   } else {
     doConnectMetaMask()
